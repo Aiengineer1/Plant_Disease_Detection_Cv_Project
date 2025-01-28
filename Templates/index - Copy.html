@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background-image: url('static/image.png');">
+    
+    <div class="heading-container">
+        <div class="Myheading">
+            <h2>Plant Disease Detection</h2>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="upload-container">
+            <div class="upload-box" id="upload-box">
+                <button id="upload-btn" onclick="document.getElementById('file-input').click();">
+                    <svg viewBox="0 0 24 24" style="width:30px;height:30px;margin-right:12px;">
+                        <path fill="currentColor" d="M2 12H4V17H20V12H22V17C22 18.11 21.11 19 20 19H4C2.9 19 2 18.11 2 17V12M12 2L6.46 7.46L7.88 8.88L11 5.75V15H13V5.75L16.13 8.88L17.55 7.45L12 2Z"></path>
+                    </svg>
+                    Upload Image
+                </button>
+                <p id="drop-text">or drop a file here</p>
+                <p>CTRL+V to paste image or URL</p>
+                <input type="file" id="file-input" style="display: none;">
+            </div>
+        </div>
+
+        <div class="image-container" id="image-container">
+            <div class="image-box">
+                <img id="uploaded-img" src="" alt="Uploaded Image">
+            </div>
+            <div class="predict-button-container">
+                <button id="predict-btn">Predict</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="result-container">
+        <h3>Result</h3>
+        <!-- <p id="result-text">Your result will be displayed here.</p> -->
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
